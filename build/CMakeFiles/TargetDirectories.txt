@@ -1,0 +1,2 @@
+/mnt/c/Users/T/GameDevelopment/GameEngineProg/ValinorEngine/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/T/GameDevelopment/GameEngineProg/ValinorEngine/build/CMakeFiles/rebuild_cache.dir

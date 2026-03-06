@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ValinorEngine.vcxproj" />
+  <Project Path="ValinorEngine.vcxproj" Id="141fa2a1-421b-4bdb-b160-c662f5a80615" />
 </Solution>
