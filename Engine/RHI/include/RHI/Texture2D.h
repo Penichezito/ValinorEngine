@@ -10,13 +10,13 @@
 namespace Valinor::RHI {
 
 // Enum for supported texture formats
-enums class textureFormat : uint8_t {
+enum class TextureFormat : uint8_t {
 	RGBA8, RGB8, Depth24Stencil8
 };
 
 // Structure describing texture properties
 struct TextureDescription {
-	uint32_t        widht        = 1; // Texture width (default 1)
+	uint32_t        width        = 1; // Texture width (default 1)
 	uint32_t        height       = 1; // Texture height (default 1)
 	TextureFormat   format       = TextureFormat::RGBA8; // Texture format
 	bool            generateMips = false; // Generate mipmaps flag

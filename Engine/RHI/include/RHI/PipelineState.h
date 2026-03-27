@@ -13,7 +13,7 @@ enum class BlendMode     : uint8_t { None, Alpha, Additive };
 enum class CullMode      : uint8_t { None, Back, Front };
 enum class DepthTestMode : uint8_t { LessEqual, Less, Always, Never };
 
-struct {
+struct PipelineStateDescriptor {
 	std::shared_ptr<Shader> VertexShader;
 	std::shared_ptr<Shader> FragmentShader;
 
@@ -38,7 +38,7 @@ public:
 
 	[[nodiscard]]
 	static std::unique_ptr<PipelineState>
-		Create(const PipelineStateDescription& desc);
+		Create(const PipelineStateDescriptor& desc);
 };
 
 } // namespace Valinor::RHI

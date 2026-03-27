@@ -14,7 +14,7 @@ class VertexBuffer;
 class IndexBuffer;
 
 // Structure representing a draw command
-struct DrawCommand {
+struct DrawCallCommand {
 	std::shared_ptr<PipelineState> Pipeline;          // Pipeline state for the draw call
 	std::shared_ptr<VertexBuffer>  VBO;               // Vertex buffer to bind
 	std::shared_ptr<IndexBuffer>   IBO;               // Index buffer (nullptr = DrawArrays)
@@ -36,7 +36,7 @@ public:
 	void Clear();
 
 	// Stores a draw command (does not call OpenGL directly)
-	void DrawIndexed(const DrawcallCommand& cmd);
+	void DrawIndexed(const DrawCallCommand& cmd);
 
 	// Submits all recorded draw commands for execution
 	void Submit();

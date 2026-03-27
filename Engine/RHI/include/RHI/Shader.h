@@ -10,7 +10,7 @@
 namespace Valinor::RHI {
 
 // Enum for supported shader types
-enums class ShaderType : uint8_t {
+enum class ShaderType : uint8_t {
 	Vertex, Fragment, Compute
 };
 
@@ -19,7 +19,7 @@ class Shader {
 public:
 	virtual ~Shader() = default;
 	Shader(const Shader&)            = delete; // Disable copy constructor
-	shader& operator=(const Shader&) = delete; // Disable copy assignment
+	Shader& operator=(const Shader&) = delete; // Disable copy assignment
 
 	[[nodiscard]] virtual ShaderStage  GetStage() const noexcept = 0;         // Get shader stage (vertex, fragment, etc.)
 	[[nodiscard]] virtual std::string_view GetName() const noexcept = 0;      // Get shader name
@@ -29,7 +29,7 @@ public:
 	// Vulkan: VkShaderModuleCreateInfo
 	[[nodiscard]]
 	static std::shared_ptr<Shader>
-		Create(std::string_view spirvPath, shaderStage stage,
+		Create(std::string_view spirvPath, ShaderStage stage,
 			   std::string_view debugName = "");
 
 protected:
