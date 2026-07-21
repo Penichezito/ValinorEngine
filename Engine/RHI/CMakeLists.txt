@@ -11,4 +11,7 @@ target_include_directories(Engine_RHI
 )
 
 # RHI depends nothing else - it's pure contract.
+# No target_link_libraries here — RHI doesn't depend on anything.
+# Any module that declares: target_link_libraries(X PUBLIC Engine_RHI)
+# automatically receives the RHI headers in its include tree.
 

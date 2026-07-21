@@ -6,7 +6,7 @@
 
 namespace Valinor::RHI {
 
-// Foward declaration - Shader.h implements the Shader class, but we don't want to include it here.
+// Forward declaration - Shader.h implements the Shader class, but we don't want to include it here.
 class Shader;
 
 enum class BlendMode     : uint8_t { None, Alpha, Additive };
@@ -33,8 +33,8 @@ public:
 	//  Applies ALL states at once. 
 	// ⚠ Forbidden in game code: glEnable(GL_BLEND) 
 	// ✅ Correct: pipeline->Bind()
-	virtual void Bind()  const = 0;
-	virtual void Ubind() const = 0;
+	virtual void Bind()   const = 0;
+	virtual void Unbind() const = 0;
 
 	[[nodiscard]]
 	static std::unique_ptr<PipelineState>

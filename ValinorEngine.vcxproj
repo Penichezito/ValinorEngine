@@ -128,6 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
+    <Text Include="Engine\Core\CMakeLists.txt" />
+    <Text Include="Engine\Renderer_OpenGL\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cmake\CompilerOptions.cmake" />
+    <None Include="Shaders\glsl\triangle.frag">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

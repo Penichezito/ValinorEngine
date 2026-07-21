@@ -6,7 +6,7 @@
 
 namespace Valinor {
 // Application constructor initializes the application with the given configuration, window, and command buffer
-Application::Aplication(ApplicationConfig config,
+Application::Application(ApplicationConfig config,
 						std::unique_ptr<IWindow> window,
 						std::shared_ptr<RHI::CommandBuffer> cmd)
 	: m_Config(std::move(config))
@@ -18,7 +18,7 @@ void Application::Run() {
 	using Clock = std::chrono::steady_clock;
 	auto last = Clock::now();
 
-	while (mRunning && !m_Window->Shoudclose()) {
+	while (m_Running && !m_Window->ShouldClose()) {
 		// DeltaTime with capping of 50ms to avoid spiral of death
 		auto now = Clock::now();
 		float dt = std::chrono::duration<float>(now - last).count();
@@ -40,6 +40,6 @@ void Application::Run() {
 }
 
 void Application::InternalUpdate(float) {}
-void application::InternalRender()		{}
+void Application::InternalRender()		{}
 
 } // namespace Valinor

@@ -18,7 +18,7 @@ struct ApplicationConfig {
 class IWindow {
 public:
 	virtual ~IWindow() = default;
-	virtual coid PollEvents() = 0;
+	virtual void PollEvents() = 0;
 	virtual void SwapBuffers() = 0;
 	[[nodiscard]] virtual bool ShouldClose()       const = 0;
 	[[nodiscard]] virtual void* GetNativeHandle() const = 0;
@@ -26,11 +26,11 @@ public:
 
 class Application {
 public:
-	application(applicationConfig config,
+	Application(ApplicationConfig config,
 				std::unique_ptr<IWindow> window,
 				std::shared_ptr<RHI::CommandBuffer> cmdBuffer);
 
-	virtual ~application() = default;
+	virtual ~Application() = default;
 	Application(const application)            = delete;            // Disable copy constructor
 	Application& operator=(const Application) = delete;            // Disable copy assignment
 

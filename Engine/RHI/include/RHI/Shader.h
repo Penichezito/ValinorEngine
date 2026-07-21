@@ -21,7 +21,7 @@ public:
 	Shader(const Shader&)            = delete; // Disable copy constructor
 	Shader& operator=(const Shader&) = delete; // Disable copy assignment
 
-	[[nodiscard]] virtual ShaderStage  GetStage() const noexcept = 0;         // Get shader stage (vertex, fragment, etc.)
+	[[nodiscard]] virtual ShaderType  GetStage() const noexcept = 0;         // Get shader stage (vertex, fragment, etc.)
 	[[nodiscard]] virtual std::string_view GetName() const noexcept = 0;      // Get shader name
 
 	// Loads SPIR-V binary from disk and creates a shader instance
@@ -29,12 +29,12 @@ public:
 	// Vulkan: VkShaderModuleCreateInfo
 	[[nodiscard]]
 	static std::shared_ptr<Shader>
-		Create(std::string_view spirvPath, ShaderStage stage,
+		Create(std::string_view spirvPath, ShaderType stage,
 			   std::string_view debugName = "");
 
 protected:
-	explicit Shader(ShaderStage s) : m_Stage(s) {} // Protected constructor
-	ShaderStage m_Stage; // Shader stage type
+	explicit Shader(ShaderType s) : m_Stage(s) {} // Protected constructor
+	ShaderType m_Stage; // Shader stage type
 };
 
 } // namespace Valinor::RHI
